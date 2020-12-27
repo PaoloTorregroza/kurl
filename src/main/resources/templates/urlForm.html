@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <div class="app-container">
+        <h1>KURL the kotlin url shortenner</h1>
+        <form action="/" th:action="@{/}" th:object="${link}" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Your url</label>
+                <input class="form-control" type="text" th:field="*{url}" placeholder="URL">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Slug (shorted url, optional)</label>
+                <input class="form-control" type="text" th:field="*{slug}" placeholder="Slug (optional)">
+            </div>
+            <input class="send-form-btn btn btn-primary" type="submit" value="Save">
+        </form>
+        <div th:if="${errorMessage != null}" class="alert alert-danger">
+            <p th:text="${errorMessage}">Error message</p>
+        </div>    
+        <div th:if="${shortenned != null}" class="output">
+            <p>Url: </p>
+            <p th:text="${url}"></p>
+            <br />
+            <p>Shortened: </p>
+            <p th:text="${shortened}"></p>
+        </div>
+    </div>
+</body>
+</html>

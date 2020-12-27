@@ -1,0 +1,23 @@
+body, html {
+    background-color: #ccc;
+}
+
+h1 {
+    text-align: center;
+}
+
+.app-container {
+    margin: 20px 16% 0 16%;
+    padding: 20px;
+    background-color: white;
+}
+
+.send-form-btn {
+    width: 100%;
+}
+
+.output {
+    padding: 1%;
+    margin-top: 6px;
+    background-color: #f8f8f8;
+} 
